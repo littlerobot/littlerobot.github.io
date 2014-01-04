@@ -240,7 +240,7 @@ p.uppercase {
 a,
 a:hover,
 a:focus {
-	text-decoration: none;
+	text-decoration: underline;
 	outline: 0;
 }
 
@@ -1213,7 +1213,8 @@ a i:hover {
 .process h4,
 .process h5,
 .process h6,
-.process p {
+.process p,
+.process a {
 	color: #ffffff;
 }
 

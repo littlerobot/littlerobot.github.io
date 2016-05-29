@@ -1,7 +1,7 @@
 ---
 title: "Have you outgrown spreadsheets? Part 1: Inconsistent data"
 image:
-    name: 2016-05-27-sheep.jpg
+    name: 2016-05-31-sheep.jpg
     alt: A single black sheep in a group of white sheep
     credit: <a href="https://en.wikipedia.org/wiki/Black_sheep#/media/File:Black_sheep-1.jpg">A black sheep stands out from the flock</a>&nbsp;<a href="http://creativecommons.org/licenses/by/2.0">(license)</a>
 

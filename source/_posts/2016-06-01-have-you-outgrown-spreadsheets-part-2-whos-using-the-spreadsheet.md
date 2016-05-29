@@ -1,7 +1,7 @@
 ---
-title: "Have you outgrown spreadsheets? Part 2: Who's using the spreadsheet"
+title: "Have you outgrown spreadsheets? Part 2: Who's using the spreadsheet?"
 image:
-    name: 2016-05-28-chainlink-fence.jpg
+    name: 2016-06-01-chainlink-fence.jpg
     alt: Chainlink fence
     
 categories:

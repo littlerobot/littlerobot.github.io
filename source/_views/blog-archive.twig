@@ -1,7 +1,55 @@
-{% extends "base" %}
-{% block content_wrapper %}
-    <div class="container clearfix">
+{% extends "default" %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        jQuery(window).load(function () {
+            var $container = $('#posts');
 
-        {% block content %}{% endblock %}
-    </div>
+            $container.isotope({
+                itemSelector: '.entry',
+                masonry: {
+                    columnWidth: '.entry:not(.entry-date-section)'
+                }
+            });
+
+            $container.infinitescroll({
+                        loading: {
+                            finishedMsg: '<i class="icon-line-check"></i>',
+                            msgText: '<i class="icon-line-loader icon-spin"></i>',
+                            img: "images/preloader-dark.gif",
+                            speed: 'normal'
+                        },
+                        state: {
+                            isDone: false
+                        },
+                        nextSelector: "#load-next-posts a",
+                        navSelector: "#load-next-posts",
+                        itemSelector: "div.entry",
+                        behavior: 'portfolioinfiniteitemsloader'
+                    },
+                    function (newElements) {
+                        $container.isotope('appended', $(newElements));
+                        var t = setTimeout(function () {
+                            $container.isotope('layout');
+                        }, 2000);
+                        SEMICOLON.initialize.resizeVideos();
+                        SEMICOLON.widget.loadFlexSlider();
+                        SEMICOLON.widget.masonryThumbs();
+                        var t = setTimeout(function () {
+                            SEMICOLON.initialize.blogTimelineEntries();
+                        }, 2500);
+                    });
+
+            var t = setTimeout(function () {
+                SEMICOLON.initialize.blogTimelineEntries();
+            }, 2500);
+
+            $(window).resize(function () {
+                $container.isotope('layout');
+                var t = setTimeout(function () {
+                    SEMICOLON.initialize.blogTimelineEntries();
+                }, 2500);
+            });
+        });
+    </script>
 {% endblock %}

@@ -22,26 +22,27 @@
                 <ul class="entry-meta clearfix">
                     <li><i class="icon-calendar3"></i> {{ page.date|date('d F Y') }}</li>
                     {% if page.categories %}
-                    <li>
-                        <i class="icon-tag"></i>
-                        {% for category in page.categories %}
-                            <a href="/blog/categories/{{ category }}" title="See all blog posts about {{ category }}">{{ category }}</a>
-                            {% if false == loop.last %}&middot;{% endif %}
-                        {% endfor %}
-                    </li>
+                        <li>
+                            <i class="icon-tag"></i>
+                            {% for category in page.categories %}
+                                <a href="/blog/categories/{{ category }}"
+                                   title="See all blog posts about {{ category }}">{{ category }}</a>
+                                {% if false == loop.last %}&middot;{% endif %}
+                            {% endfor %}
+                        </li>
                     {% endif %}
                     {#<li><a href="#"><i class="icon-comments"></i> 43 Comments</a></li>#}
                 </ul><!-- .entry-meta end -->
 
                 {% if page.image %}
-                <!-- Entry Image
-                ============================================= -->
-                <div class="entry-image bottommargin">
-                    <img src="/images/blog/large/{{ page.image.name }}" alt="{{ page.image.alt }}">
-                    <div class="fancy-title title-border">
-                        <h6>{{ page.image.credit|raw }}</h6>
-                    </div>
-                </div><!-- .entry-image end -->
+                    <!-- Entry Image
+                    ============================================= -->
+                    <div class="entry-image bottommargin">
+                        <img src="/images/blog/large/{{ page.image.name }}" alt="{{ page.image.alt }}">
+                        <div class="fancy-title title-border">
+                            <h6>{{ page.image.credit|raw }}</h6>
+                        </div>
+                    </div><!-- .entry-image end -->
                 {% endif %}
 
                 <!-- Entry Content
@@ -55,7 +56,8 @@
             ============================================= -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Posted by <span><a href="/stuart/" title="Find out more about Stuart">Stuart</a></span></h3>
+                    <h3 class="panel-title">Posted by <span><a href="/stuart/"
+                                                               title="Find out more about Stuart">Stuart</a></span></h3>
                 </div>
                 <div class="panel-body">
                     <div class="author-image">
@@ -286,52 +288,52 @@
 
                 <div class="clear"></div>#}
 
-{#                <!-- Comment Form
-                ============================================= -->
-                <div id="respond" class="clearfix">
+            {#                <!-- Comment Form
+                            ============================================= -->
+                            <div id="respond" class="clearfix">
 
-                    <h3>Leave a <span>Comment</span></h3>
+                                <h3>Leave a <span>Comment</span></h3>
 
-                    <form class="clearfix" action="#" method="post" id="commentform">
+                                <form class="clearfix" action="#" method="post" id="commentform">
 
-                        <div class="col_one_third">
-                            <label for="author">Name</label>
-                            <input type="text" name="author" id="author" value="" size="22" tabindex="1"
-                                   class="sm-form-control"/>
-                        </div>
+                                    <div class="col_one_third">
+                                        <label for="author">Name</label>
+                                        <input type="text" name="author" id="author" value="" size="22" tabindex="1"
+                                               class="sm-form-control"/>
+                                    </div>
 
-                        <div class="col_one_third">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" value="" size="22" tabindex="2"
-                                   class="sm-form-control"/>
-                        </div>
+                                    <div class="col_one_third">
+                                        <label for="email">Email</label>
+                                        <input type="text" name="email" id="email" value="" size="22" tabindex="2"
+                                               class="sm-form-control"/>
+                                    </div>
 
-                        <div class="col_one_third col_last">
-                            <label for="url">Website</label>
-                            <input type="text" name="url" id="url" value="" size="22" tabindex="3"
-                                   class="sm-form-control"/>
-                        </div>
+                                    <div class="col_one_third col_last">
+                                        <label for="url">Website</label>
+                                        <input type="text" name="url" id="url" value="" size="22" tabindex="3"
+                                               class="sm-form-control"/>
+                                    </div>
 
-                        <div class="clear"></div>
+                                    <div class="clear"></div>
 
-                        <div class="col_full">
-                            <label for="comment">Comment</label>
-                            <textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
-                        </div>
+                                    <div class="col_full">
+                                        <label for="comment">Comment</label>
+                                        <textarea name="comment" cols="58" rows="7" tabindex="4" class="sm-form-control"></textarea>
+                                    </div>
 
-                        <div class="col_full nobottommargin">
-                            <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit"
-                                    class="button button-3d nomargin">Submit Comment
-                            </button>
-                        </div>
+                                    <div class="col_full nobottommargin">
+                                        <button name="submit" type="submit" id="submit-button" tabindex="5" value="Submit"
+                                                class="button button-3d nomargin">Submit Comment
+                                        </button>
+                                    </div>
 
-                    </form>
+                                </form>
 
-                </div>#}<!-- #respond end -->
+                            </div>#}<!-- #respond end -->
 
-            </div><!-- #comments end -->
+        </div><!-- #comments end -->
 
-        </div>
+    </div>
 
     </div>
 {% endblock %}

@@ -8,7 +8,7 @@ image:
 categories:
     - business
     - spreadsheets
-    
+
 ---
 
 This article is the first in a [multi-part series](/blog/categories/spreadsheets) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.
@@ -37,3 +37,5 @@ A common workflow I have seen is for the spreadsheet owner to send copies to oth
 This can be okay when only a small number of people are involved but it tends to increase all the problems above and also means that there are multiple sources of truth, which aren't widely accessible.
 
 A central system means there is a single place that all desired employees can access. They have can update their information whenever it is appropriate and everyone else who needs to be able to read that information has access to the most up-to-date information.
+
+{% include '_includes/spreadsheets_cta.html.twig' %}

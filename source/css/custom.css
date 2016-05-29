@@ -5,13 +5,6 @@
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
 
-/* ----------------------------------------------------------------
-	Custom CSS
-
-	Add all your Custom Styled CSS here for New Styles or
-	Overwriting Default Theme Styles for Better Hanlding Updates
------------------------------------------------------------------*/
-
 .hero-headline h1 {
     font-size: 58px;
     line-height: 1.6;
@@ -34,6 +27,4 @@
     max-width: 80%;
 }
 
-.orange {
-    color: #F6612A;
-}
+.orange { color: #F6612A; }

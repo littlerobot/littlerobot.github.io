@@ -27,23 +27,23 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    
-    {% block stylesheets %}
-    <!-- Stylesheets
-    ============================================= -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic|Merriweather"
-          rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/style.css" type="text/css"/>
 
-    <!-- Agency Demo Specific Stylesheet -->
-    <link rel="stylesheet" href="/css/agency.css" type="text/css"/>
-    <!-- / -->
-    <link rel="stylesheet" href="/css/font-icons.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/animate.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/responsive.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/colors.css" type="text/css"/>
-    <link rel="stylesheet" href="/css/custom.css" type="text/css"/>
+    {% block stylesheets %}
+        <!-- Stylesheets
+        ============================================= -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic|Merriweather"
+              rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/style.css" type="text/css"/>
+
+        <!-- Agency Demo Specific Stylesheet -->
+        <link rel="stylesheet" href="/css/agency.css" type="text/css"/>
+        <!-- / -->
+        <link rel="stylesheet" href="/css/font-icons.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/animate.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/responsive.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/colors.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/custom.css" type="text/css"/>
     {% endblock %}
 
     <!-- Document Title
@@ -113,7 +113,7 @@
                                 <div>Projects</div>
                             </a>
                         </li>
-                        <li class="{% if page.nav_name == 'blog' or page.type == '_post' %}current{% endif %}">
+                        <li class="{% if page.nav_name == 'blog' or page.url starts with '/blog/' %}current{% endif %}">
                             <a href="/blog/">
                                 <div>Blog</div>
                             </a>
@@ -146,23 +146,26 @@
         <div id="copyrights">
             <div class="container clearfix">
                 <div class="col_half">
-                    Copyright &copy; {{ null|date('Y')}} little robot Limited<br>
+                    Copyright &copy; {{ null|date('Y') }} little robot Limited<br>
                     Registered in England and Wales with company number 08923395<br>
                 </div>
 
                 <div class="col_half col_last tright">
                     <div class="fright clearfix">
-                        <a href="https://www.facebook.com/littlerobotlimited" class="social-icon si-small si-light si-rounded si-facebook">
+                        <a href="https://www.facebook.com/littlerobotlimited"
+                           class="social-icon si-small si-light si-rounded si-facebook">
                             <i class="icon-facebook"></i>
                             <i class="icon-facebook"></i>
                         </a>
 
-                        <a href="https://github.com/littlerobot" class="social-icon si-small si-light si-rounded si-github">
+                        <a href="https://github.com/littlerobot"
+                           class="social-icon si-small si-light si-rounded si-github">
                             <i class="icon-github"></i>
                             <i class="icon-github"></i>
                         </a>
 
-                        <a href="https://www.linkedin.com/company/little-robot" class="social-icon si-small si-light si-rounded si-linkedin">
+                        <a href="https://www.linkedin.com/company/little-robot"
+                           class="social-icon si-small si-light si-rounded si-linkedin">
                             <i class="icon-linkedin"></i>
                             <i class="icon-linkedin"></i>
                         </a>
@@ -186,7 +189,7 @@
 <!-- Footer Scripts
 ============================================= -->
 {% block javascripts %}
-<script type="text/javascript" src="/js/functions.js"></script>
+    <script type="text/javascript" src="/js/functions.js"></script>
 {% endblock %}
 
 </body>

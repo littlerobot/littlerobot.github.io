@@ -7,7 +7,9 @@ image:
 categories:
     - business
     - spreadsheets
-    
+
+draft : true
+
 ---
 
 This article is the second in a [multi-part series](/blog/categories/spreadsheets) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.
@@ -25,3 +27,5 @@ The primary ways to manage access with spreadsheets is to only make them physica
 This is a solved problem with a custom system&mdash;you can decide exactly what information particular types or members of staff can view and who is allowed to edit which bits of data. For example, some people may have read-only access to data and others, who are directly responsible for it, would have the ability to modify the data. Others may not have any access at all.
 
 These rich permissions features also help you keep your data secure and auditing features can be included, where this is appropriate and necessary for your industry.
+
+{% include '_includes/spreadsheets_cta.html.twig' %}

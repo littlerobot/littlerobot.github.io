@@ -1,0 +1,57 @@
+{% set year = '0' %}
+{% set month = '0' %}
+
+<!-- Posts ============================================= -->
+<div id="posts" class="post-grid grid-container post-masonry post-timeline grid-2 clearfix">
+    <div class="timeline-border"></div>
+    {% for post in page.pagination.items %}
+        {% if post.date|date('m') != month or post.date|date('Y') != year %}
+            {% set year = post.date|date('Y') %}
+            {% set month = post.date|date('m') %}
+            <div class="entry entry-date-section notopmargin"><span>{{ post.date|date('F Y') }}</span></div>
+        {% endif %}
+        <div class="entry clearfix">
+            <div class="entry-timeline">
+                <div class="timeline-divider"></div>
+            </div>
+            {% if post.image %}
+                <div class="entry-image">
+                    <a href="{{ post.url }}">
+                        <img src="/images/blog/small/{{ post.image.name }}" alt="{{ post.image.alt }}">
+                    </a>
+                </div>
+            {% endif %}
+            <div class="entry-title">
+                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            </div>
+            <ul class="entry-meta clearfix">
+                <li><i class="icon-calendar3"></i> {{ post.date|date('d F Y') }}</li>
+                {% if post.categories %}
+                    <li><i class="icon-tag"></i>
+                        {% for category in post.categories %}
+                            <a href="/blog/categories/{{ category }}"
+                               title="See all blog posts about {{ category }}">{{ category }}</a>
+                            {% if false == loop.last %}&middot;{% endif %}
+                        {% endfor %}
+                    </li>
+                {% endif %}
+            </ul>
+            <div class="entry-content">
+                <a href="{{ post.url }}" class="more-link">Read post</a>
+            </div>
+        </div>
+    {% endfor %}
+</div><!-- #posts end -->
+
+{% if page.pagination.previous_page or page.pagination.next_page %}
+    <div id="load-next-posts" class="center">
+        {% if page.pagination.previous_page %}
+            <a href="{{ page.pagination.previous_page.url }}"
+               class="button button-3d button-dark button-large button-rounded">Newer posts</a>
+        {% endif %}
+        {% if page.pagination.next_page %}
+            <a href="{{ page.pagination.next_page.url }}"
+               class="button button-3d button-dark button-large button-rounded">Older posts</a>
+        {% endif %}
+    </div>
+{% endif %}

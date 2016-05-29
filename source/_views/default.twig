@@ -1,0 +1,11 @@
+{% extends "base" %}
+{% block content_wrapper %}
+    <div class="container clearfix">
+        {% block page_title %}
+            <div class="fancy-title title-double-border">
+                <h1>{{ page.title }}</h1>
+            </div>
+        {% endblock %}
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}

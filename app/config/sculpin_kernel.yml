@@ -1,0 +1,19 @@
+sculpin:
+    permalink: pretty
+sculpin_content_types:
+    posts:
+        permalink: /blog/:year/:month/:filename/
+        taxonomies:
+            - name: categories
+              strategies:
+                - \Sculpin\Contrib\Taxonomy\PermalinkStrategy\ConvertToLowercaseStrategy
+                - \Sculpin\Contrib\Taxonomy\PermalinkStrategy\TranslateSpacesToDashesStrategy
+services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+    wyrihaximus.html_compress.compress:
+        class: \WyriHaximus\HtmlCompress\Frameworks\SculpinListener
+        tags:
+            - {  name: kernel.event_listener, event: sculpin.core.after_format, method: onAfterFormatSmallest }

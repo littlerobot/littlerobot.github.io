@@ -1,0 +1,18 @@
+---
+layout: default
+title: Blog archive by category
+generator: [posts_category_index, pagination]
+pagination:
+    provider: page.category_posts
+
+---
+
+{% block title %}
+Blog posts about {{ page.category }}
+{% endblock %}
+
+{% block page_title %}
+    <div class="fancy-title title-double-border">
+        <h1>Blog posts about <span>{{ page.category }}</span></h1>
+    </div>
+{% endblock %}

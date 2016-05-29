@@ -1,8 +1,9 @@
 ---
 title: "Have you outgrown spreadsheets? Part 3: What changed?"
 image:
-    name: 2016-05-28-chainlink-fence.jpg
-    alt: Chainlink fence
+    name: 2016-06-02-notebook.jpg
+    alt: Notebook
+    credit: <a href="https://www.flickr.com/photos/93452909@N00/176056228">Nuclear fission Deutsches Museum</a>&nbsp;<a href="https://creativecommons.org/licenses/by-sa/2.0/">(license)</a>
     
 categories:
     - business

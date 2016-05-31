@@ -18,7 +18,7 @@ fi
 # Would be a good idea to wipe out the prod env first, so that DELETE_REMOVED works properly
 rm -rf output_prod/*
 
-sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
+vendor/bin/sculpin generate --env=prod || ( echo "Could not generate the site" && exit )
 
 S3CMD_PATH=`which s3cmd`
 if [ $? -ne 0 -o -z "$S3CMD_PATH" ]

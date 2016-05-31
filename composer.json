@@ -1,0 +1,7 @@
+{
+    "require": {
+        "dflydev/embedded-composer": "@dev",
+        "sculpin/sculpin": "^2.1@dev",
+        "wyrihaximus/html-compress-sculpin": "^1.0"
+    }
+}

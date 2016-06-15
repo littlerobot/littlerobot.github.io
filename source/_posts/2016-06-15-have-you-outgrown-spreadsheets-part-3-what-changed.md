@@ -1,7 +1,7 @@
 ---
 title: "Have you outgrown spreadsheets? Part 3: What changed?"
 image:
-    name: 2016-06-02-notebook.jpg
+    name: 2016-06-15-notebook.jpg
     alt: Notebook
     credit: <a href="https://www.flickr.com/photos/93452909@N00/176056228">Nuclear fission Deutsches Museum</a>&nbsp;<a href="https://creativecommons.org/licenses/by-sa/2.0/">(license)</a>
     
@@ -9,8 +9,6 @@ categories:
     - business
     - spreadsheets
     
-draft : true
-
 ---
 
 This article is the third in a [multi-part series](/blog/categories/spreadsheets) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.

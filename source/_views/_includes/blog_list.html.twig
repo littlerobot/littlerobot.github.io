@@ -22,14 +22,14 @@
                 </div>
             {% endif %}
             <div class="entry-title">
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <h2><a href="{{ post.url }}/">{{ post.title }}</a></h2>
             </div>
             <ul class="entry-meta clearfix">
                 <li><i class="icon-calendar3"></i> {{ post.date|date('d F Y') }}</li>
                 {% if post.categories %}
                     <li><i class="icon-tag"></i>
                         {% for category in post.categories %}
-                            <a href="/blog/categories/{{ category }}"
+                            <a href="/blog/categories/{{ category }}/"
                                title="See all blog posts about {{ category }}">{{ category }}</a>
                             {% if false == loop.last %}&middot;{% endif %}
                         {% endfor %}

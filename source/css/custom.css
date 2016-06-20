@@ -5,6 +5,10 @@
 	Overwriting Default Theme Styles for Better Hanlding Updates
 -----------------------------------------------------------------*/
 
+body {
+    font-size: 16px;
+}
+
 .hero-headline h1 {
     font-size: 58px;
     line-height: 1.6;

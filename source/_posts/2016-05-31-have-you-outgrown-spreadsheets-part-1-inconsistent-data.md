@@ -11,7 +11,7 @@ categories:
 
 ---
 
-This article is the first in a [multi-part series](/blog/categories/spreadsheets) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.
+{% include '_includes/spreadsheets_intro.html.twig' with { 'number': 'first' } %}
 
 Spreadsheets are a great way to start adding structure to previously completely manual processes and they allow information sharing between staff. After a while, though, the honeymoon period ends and they start to become a bit of a liability.
 

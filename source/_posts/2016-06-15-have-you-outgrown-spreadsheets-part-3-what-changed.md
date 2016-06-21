@@ -11,7 +11,7 @@ categories:
     
 ---
 
-This article is the third in a [multi-part series](/blog/categories/spreadsheets) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.
+{% include '_includes/spreadsheets_intro.html.twig' with { 'number': 'third' } %}
 
 ## Do you know what happened to your business data over time? 
 Depending on your industry, it may be a legal requirement for you to be able to audit data changes for compliance reasons. In any case, it is often useful to be able to see when a record was last updated to get an idea of how accurate it is likely to be; find out who updated it last so you can speak to them about the information you see; or even view the exact changes that happened in a particular update.

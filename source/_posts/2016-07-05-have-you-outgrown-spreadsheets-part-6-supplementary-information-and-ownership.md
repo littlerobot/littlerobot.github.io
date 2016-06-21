@@ -13,7 +13,7 @@ draft: true
 
 ---
 
-This article is the sixth in a [multi-part series](/blog/categories/spreadsheets/) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.
+{% include '_includes/spreadsheets_intro.html.twig' with { 'number': 'sixth' } %}
 
 For multi-stage, long running business processes, such as sales, order fulfilment, and project management, it is likely that additional (possibly non-structured) data will need to be recorded and multiple users may be responsible for completing different parts of the process.
 

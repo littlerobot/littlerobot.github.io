@@ -11,7 +11,7 @@ categories:
 
 ---
 
-This article is the fourth in a [multi-part series](/blog/categories/spreadsheets/) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.
+{% include '_includes/spreadsheets_intro.html.twig' with { 'number': 'fourth' } %}
 
 Excel is certainly great at allowing people to quickly bring some structure to their data: Add some column headings, write some formulas to calculate things, and begin adding your data. It almost couldn't be simpler.
 

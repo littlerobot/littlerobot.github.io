@@ -13,7 +13,7 @@ draft: true
 
 ---
 
-This article is the fifth in a [multi-part series](/blog/categories/spreadsheets/) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.
+{% include '_includes/spreadsheets_intro.html.twig' with { 'number': 'fifth' } %}
 
 Probably the most powerful feature of Excel when it comes to managing the data used to run your business is the ability for computer savvy users to put together business specific calculations and functionality using formulas. It's exceptionally valuable to be able to reduce manual effort, and duplication, as well as adding some structure. The downside of this is that the formula grow and grow as more features are added and you end up with a big blog of business process rules all over your spreadsheet.
 

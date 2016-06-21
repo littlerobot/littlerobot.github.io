@@ -10,7 +10,7 @@ categories:
 
 ---
 
-This article is the second in a [multi-part series](/blog/categories/spreadsheets) explaining why spreadsheets can start to become a liability as your company grows and how investing in bespoke systems can alleviate these issues, as well as bringing additional benefits.
+{% include '_includes/spreadsheets_intro.html.twig' with { 'number': 'first' } %}
 
 ## Multi-user access
 More and more people will want access to a spreadsheet as it starts becoming valuable, which is great! It's possible to share the file on a network drive so that it can be used by multiple people at the same time, and this is probably fine where there aren't many people using the spreadsheet and you have the technical expertise to set the server permissions to meet your requirements.

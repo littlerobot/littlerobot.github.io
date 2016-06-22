@@ -1,3 +1,4 @@
 .sculpin
 output_*
 vendor
+/node_modules/

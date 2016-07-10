@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var cleanCss = require('gulp-clean-css');
+var htmlmin = require('gulp-htmlmin');
 var run = require('gulp-run');
 var rev = require('gulp-rev');
 var revReplace = require('gulp-rev-replace');
@@ -57,6 +58,18 @@ gulp.task('revs-replace', ['assets', 'sculpin-generate'], function () {
     .pipe(gulp.dest('output_prod'));
 });
 
+gulp.task('minify-html', ['sculpin-generate', 'revs-replace'], function () {
+  return gulp.src('output_prod/**/*.html')
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      removeComments: true,
+      sortAttributes: true,
+      sortClassName: true
+    }))
+    .pipe(gulp.dest('output_prod'));
+});
+
 gulp.task('sculpin-generate', ['clean', 'assets'], function () {
   return run('./vendor/bin/sculpin generate --env=prod').exec();
 });
@@ -67,4 +80,4 @@ gulp.task('clean', function () {
 
 gulp.task('assets', ['styles', 'scripts']);
 
-gulp.task('generate', ['clean', 'assets', 'sculpin-generate', 'revs-replace']);
+gulp.task('generate', ['clean', 'assets', 'sculpin-generate', 'revs-replace', 'minify-html']);

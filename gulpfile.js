@@ -1,8 +1,10 @@
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var cleanCss = require('gulp-clean-css');
-var exec = require('child_process').exec;
+var run = require('gulp-run');
+var rev = require('gulp-rev');
+var revReplace = require('gulp-rev-replace');
+var uglify = require('gulp-uglify');
 
 var paths = {
   scripts: ['_source/js/jquery.js', '_source/js/*.js'],
@@ -19,27 +21,50 @@ var paths = {
 };
 
 gulp.task('styles', function () {
+  let dest = 'source/css';
+
   return gulp.src(paths.styles)
     .pipe(cleanCss())
     .pipe(concat('all.min.css'))
-    .pipe(gulp.dest('source/css'));
+    .pipe(gulp.dest(dest))
+    .pipe(rev())
+    .pipe(gulp.dest(dest))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest(dest));
 });
 
 gulp.task('scripts', function () {
+  let dest = 'source/js';
+
   return gulp.src(paths.scripts)
     .pipe(uglify())
     .pipe(concat('all.min.js'))
-    .pipe(gulp.dest('source/js'));
+    .pipe(gulp.dest(dest))
+    .pipe(rev())
+    .pipe(gulp.dest(dest))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest(dest));
 });
 
-gulp.task('generate', function () {
-  exec('./vendor/bin/sculpin generate --prod');
+gulp.task('revs-replace', ['assets', 'sculpin-generate'], function () {
+  return gulp.src('output_prod/**/*.html')
+    .pipe(revReplace({
+      manifest: gulp.src([
+        'source/css/rev-manifest.json',
+        'source/js/rev-manifest.json'
+      ])
+    }))
+    .pipe(gulp.dest('output_prod'));
 });
 
-gulp.task('s3-publish', function () {
-  return exec('./s3-publish.sh');
+gulp.task('sculpin-generate', ['clean', 'assets'], function () {
+  return run('./vendor/bin/sculpin generate --env=prod').exec();
+});
+
+gulp.task('clean', function () {
+  return run('rm -rf output_prod/*').exec();
 });
 
 gulp.task('assets', ['styles', 'scripts']);
 
-gulp.task('publish', ['assets', 's3-publish']);
+gulp.task('generate', ['clean', 'assets', 'sculpin-generate', 'revs-replace']);

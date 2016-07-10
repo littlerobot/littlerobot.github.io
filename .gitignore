@@ -2,3 +2,9 @@
 output_*
 vendor
 /node_modules/
+
+# Revisioned JS and CSS
+/source/css/*.min.css
+/source/css/rev-manifest.json
+/source/js/*.min.js
+/source/js/rev-manifest.json

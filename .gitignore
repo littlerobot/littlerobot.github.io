@@ -1,7 +1,10 @@
-.sculpin
-output_*
-vendor
+/.sculpin
+/output_*
+/vendor
 /node_modules/
+/.idea/
+.DS_Store
+
 
 # Revisioned JS and CSS
 /source/css/*.min.css

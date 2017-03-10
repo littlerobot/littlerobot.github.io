@@ -71,7 +71,7 @@ gulp.task('minify-html', ['sculpin-generate', 'revs-replace'], function () {
 });
 
 gulp.task('sculpin-generate', ['clean', 'assets'], function () {
-  return run('./vendor/bin/sculpin generate --env=prod').exec();
+  return run('sculpin generate --env=prod').exec();
 });
 
 gulp.task('clean', function () {

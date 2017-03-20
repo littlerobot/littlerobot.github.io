@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var concat = require('gulp-concat');
 var cleanCss = require('gulp-clean-css');
 var htmlmin = require('gulp-htmlmin');
-var run = require('gulp-run');
+var shell = require('gulp-shell')
 var rev = require('gulp-rev');
 var revReplace = require('gulp-rev-replace');
 var uglify = require('gulp-uglify');
@@ -22,7 +22,7 @@ var paths = {
 };
 
 gulp.task('netlify-install', function() {
-  return gulp.pipe(run('~/.phpbrew/bin/composer install').exec());
+  shell.task('~/.phpbrew/bin/composer install');
 });
 
 gulp.task('styles', function () {
@@ -75,11 +75,11 @@ gulp.task('minify-html', ['sculpin-generate', 'revs-replace'], function () {
 });
 
 gulp.task('sculpin-generate', ['clean', 'assets'], function () {
-  return gulp.pipe(run('sculpin generate --env=prod').exec());
+  shell.task('sculpin generate --env=prod');
 });
 
 gulp.task('clean', function () {
-  return gulp.pipe(run('rm -rf output_prod/*').exec());
+  shell.task('rm -rf output_prod/*');
 });
 
 gulp.task('assets', ['styles', 'scripts']);

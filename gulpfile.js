@@ -21,6 +21,10 @@ var paths = {
   ]
 };
 
+gulp.task('install', function() {
+  return run('composer install').exec();
+});
+
 gulp.task('styles', function () {
   let dest = 'source/css';
 
@@ -80,4 +84,4 @@ gulp.task('clean', function () {
 
 gulp.task('assets', ['styles', 'scripts']);
 
-gulp.task('generate', ['clean', 'assets', 'sculpin-generate', 'revs-replace', 'minify-html']);
+gulp.task('generate', ['install', 'clean', 'assets', 'sculpin-generate', 'revs-replace', 'minify-html']);

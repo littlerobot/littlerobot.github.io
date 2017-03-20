@@ -21,8 +21,8 @@ var paths = {
   ]
 };
 
-gulp.task('install', function() {
-  return run('composer install').exec();
+gulp.task('netlify-install', function() {
+  return run('~/.phpbrew/bin/composer install').exec();
 });
 
 gulp.task('styles', function () {
@@ -84,4 +84,6 @@ gulp.task('clean', function () {
 
 gulp.task('assets', ['styles', 'scripts']);
 
-gulp.task('generate', ['install', 'clean', 'assets', 'sculpin-generate', 'revs-replace', 'minify-html']);
+gulp.task('generate', ['clean', 'assets', 'sculpin-generate', 'revs-replace', 'minify-html']);
+
+gulp.task('netlify', ['netlify-install', 'generate']);

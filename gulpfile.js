@@ -22,7 +22,7 @@ var paths = {
 };
 
 gulp.task('netlify-install', function() {
-  return run('~/.phpbrew/bin/composer install').exec();
+  return gulp.pipe(run('~/.phpbrew/bin/composer install').exec());
 });
 
 gulp.task('styles', function () {
@@ -75,11 +75,11 @@ gulp.task('minify-html', ['sculpin-generate', 'revs-replace'], function () {
 });
 
 gulp.task('sculpin-generate', ['clean', 'assets'], function () {
-  return run('sculpin generate --env=prod').exec();
+  return gulp.pipe(run('sculpin generate --env=prod').exec());
 });
 
 gulp.task('clean', function () {
-  return run('rm -rf output_prod/*').exec();
+  return gulp.pipe(run('rm -rf output_prod/*').exec());
 });
 
 gulp.task('assets', ['styles', 'scripts']);
